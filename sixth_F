@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int T;
+	cin>>T;
+	for(;T>0;T--)
+	{
+		char s;
+		int up=0,down=0;
+		getchar();
+		while(1)
+		{
+			s=getchar(); 
+			if(s=='\n')
+			{
+				break;
+			}
+			if(s=='+') up++;
+			else down++;
+		}
+		int k;
+		cin>>k;
+		if(k<=abs(up-down)/2)
+		{
+			int a=max(up,down)-k;
+			int b=min(up,down)+k;
+			printf("%d\n",abs(a-b));
+		}
+		else if((k-abs(up-down)/2)%2==0)
+		{
+			printf("%d\n",abs(up-down)%2);
+		}
+		else
+		{
+			if(abs(up-down)%2==0) cout<<"2\n";
+			else cout<<"1\n";
+		}
+	}
+	return 0;
+}
