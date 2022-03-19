@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int T;
+	cin>>T;
+	for(int i=0;i<T;i++)
+	{
+		int n;
+		double max=0;
+		int x=0;
+		int y=0;
+		cin>>n;
+		for(int j=0;j<n;j++)
+		{
+			char s;
+//			scanf("%c",&s);
+			cin>>s;
+			if(s=='U')
+			{
+				y++;
+			}
+			if(s=='D')
+			{
+				y--;
+			}
+			if(s=='R')
+			{
+				x++;
+			}
+			if(s=='L')
+			{
+				x--;
+			}
+			double road=sqrt(x*x+y*y);
+			if(road>max) max=road;
+		}
+		printf("%lf\n",max);
+	}
+	return 0;
+}
