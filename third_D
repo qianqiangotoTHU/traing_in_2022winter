@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int N;
+	cin>>N;
+	char num[100001];
+	cin>>num[0];
+	char c=num[0];
+	int sub;
+	int sign=0;
+	for(int i=1;i<N;i++)
+	{
+		cin>>num[i];
+		if(sign==0&&c!=num[i])
+		{
+			sub=i-1;
+			sign=1;
+		}
+		c=num[i];
+	}
+	
+	char tem=num[sub];
+	num[sub]=num[sub+1];
+	num[sub+1]=tem;
+	for(int i=0;i<N;i++)
+	{
+		cout<<num[i];
+	}
+	return 0;
+}
