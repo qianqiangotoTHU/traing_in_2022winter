@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	long long x,a,b;
+	cin>>x>>a>>b;
+	char s;
+	int time=0;
+	getchar();
+	while(1)
+	{
+		scanf("%c",&s);
+		if(s=='0') x+=b;
+		else if(s=='1')
+		{
+			if(x-a>=0)
+			{
+				x-=a;
+				time++;
+			}
+			else x+=b;
+		}
+		else break;
+	}
+	cout<<time;
+	return 0;
+}
