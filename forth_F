@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	char sec;
+	int fir;
+	int du=0;
+	while(1)
+	{
+		sec=getchar();
+		if(sec=='\n') break;
+		if(sec=='>') du+=1;
+		else if(sec=='<') du-=1;
+		else
+		{
+			switch(sec)
+			{
+				case 'C':
+					fir=1;
+					break;
+				case 'D':
+					fir=2;
+					break;
+				case 'E':
+					fir=3;
+					break;
+				case 'F':
+					fir=4;
+					break;
+				case 'G':
+					fir=5;
+					break;
+				case 'A':
+					fir=6;
+					break;
+				case 'B':
+					fir=7;
+					break;
+			}
+			cout<<fir;
+			if(du>0)
+			{
+				for(int i=1;i<=du;i++)
+					cout<<"*";
+			}
+			else if(du<0)
+			{
+				for(int i=-1;i>=du;i--)
+					cout<<".";
+			}
+		}
+	}
+	return 0;
+}
